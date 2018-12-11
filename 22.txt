@@ -1,0 +1,50 @@
+王倩
+：
+修改的东西
+Starter.html
+
+
+ doLoadUI("load-config-id","image/doimageListUI.do");
+表设计
+1.添加了表 user_image
+Column
+Id  user_id  image
+CREATE TABLE Person 
+(
+LastName varchar,
+FirstName varchar,
+Address varchar,
+Age int
+) 
+create table user_image(
+id Int  primary key auto_increment,
+user_id varchar(44),
+image  varchar(60)
+
+
+)
+
+infer_image.html
+对于AppRootConfig.java
+添加了：
+ //====== 定义文件上传的视图解析 =====================
+	 @Bean("multipartResolver")
+	 public CommonsMultipartResolver newCommonsMultipartResolver (){
+		 CommonsMultipartResolver m=new CommonsMultipartResolver();
+		  m.setDefaultEncoding("uft8");
+		  m.setMaxUploadSize(4096000000l);
+		  m.setMaxInMemorySize(1024000);
+		 
+		 return m;
+	 }
+	 
+	
+添加了
+
+
+
+
+	
+
+
+
